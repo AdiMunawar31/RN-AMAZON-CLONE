@@ -7,7 +7,13 @@ const styles = StyleSheet.create({
   },
 
   title: {
-      fontSize: 18
+    fontSize: 18
+  },
+
+  picker: {
+    backgroundColor: '#eaeaea',
+    marginVertical: 25,
+    borderRadius: 5
   },
     
   price: {

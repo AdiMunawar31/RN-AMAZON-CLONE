@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: 140,
         borderWidth: 1,
-        borderColor: '#e3e3e3'
+        borderColor: '#e3e3e3',
+        marginBottom: 10
     },
 
     button: {
@@ -26,7 +27,6 @@ const styles = StyleSheet.create({
     quantity: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#007eb9'
     }
 })
 
