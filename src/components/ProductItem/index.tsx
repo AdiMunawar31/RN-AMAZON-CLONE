@@ -3,61 +3,48 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
-const ProductItem = () => {
+interface ProductItemProps {
+  item: {
+    id: string;
+    title: string;
+    image: string;
+    avgRating: number;
+    ratings: number;
+    price: number;
+    oldPrice?: number;
+  };
+}
+
+const ProductItem = ({item}: ProductItemProps) => {
   return (
     <View style={styles.root}>
       {/* Render Product Component */}
-      <Image
-        style={styles.img}
-        source={{
-          uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleanarchitecture.jpg',
-        }}
-      />
+      <Image style={styles.img} source={{uri: item.image}} />
 
       <View style={styles.rightContainer}>
         <Text style={styles.title} numberOfLines={3}>
-          Clean Architecture: A Craftsman's Guide to Software Structure and
-          Design
+          {item.title}
         </Text>
 
         <View style={styles.ratingsContainer}>
-          <FontAwesome
-            style={styles.star}
-            name="star"
-            size={18}
-            color={'#e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star"
-            size={18}
-            color={'#e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star"
-            size={18}
-            color={'#e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star-half-o"
-            size={18}
-            color={'#e47911'}
-          />
-          <FontAwesome
-            style={styles.star}
-            name="star-o"
-            size={18}
-            color={'#e47911'}
-          />
+          {[0, 0, 0, 0, 0].map((el, i) => (
+            <FontAwesome
+              key={`${item.id}-${i}`}
+              style={styles.star}
+              name={i < Math.floor(item.avgRating) ? 'star' : 'star-o'}
+              size={18}
+              color={'#e47911'}
+            />
+          ))}
 
-          <Text style={styles.totalRate}>31,026</Text>
+          <Text style={styles.totalRate}>{item.ratings}</Text>
         </View>
 
         <Text style={styles.price}>
-          from $13.57
-          <Text style={styles.oldPrice}> $16.45</Text>
+          from ${item.price}
+          {item.oldPrice && (
+            <Text style={styles.oldPrice}> ${item.oldPrice}</Text>
+          )}
         </Text>
       </View>
     </View>

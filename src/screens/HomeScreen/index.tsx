@@ -1,16 +1,17 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import ProductItem from '../../components/ProductItem';
+import products from '../../data/products';
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.wrapper}>
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-    </ScrollView>
+    <View style={styles.wrapper}>
+      <FlatList
+        data={products}
+        renderItem={({item}) => <ProductItem item={item} />}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
 };
 

@@ -14,7 +14,10 @@ export default {
   ],
   options: [
     'Black',
-    'Space Grey'
+    'Grey',
+    'Red',
+    'Green',
+    'Blue',
   ],
   avgRating: 4.8,
   ratings: 2989,
