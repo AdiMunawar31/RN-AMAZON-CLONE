@@ -18,29 +18,29 @@ const ProductScreen = () => {
   return (
     <ScrollView>
       <View style={styles.root}>
-        <Text style={styles.title}>{product.title}</Text>
-
         {/* Image Carousel */}
         <ImageCarousel images={product.images} />
+
+        <Text style={styles.title}>{product.title}</Text>
+
+        {/* Price */}
+        <Text style={styles.price}>
+          ${product.price}
+          {product.oldPrice && (
+            <Text style={styles.oldPrice}> ${product.oldPrice}</Text>
+          )}
+        </Text>
 
         {/* Option Selector */}
         <View style={styles.picker}>
           <Picker
             selectedValue={selectedOption}
             onValueChange={itemValue => setSelectedOption(itemValue)}>
-            {product.options.map(option => (
-              <Picker.Item label={option} value={option} />
+            {product.options.map((option, i) => (
+              <Picker.Item label={option} value={option} key={i} />
             ))}
           </Picker>
         </View>
-
-        {/* Price */}
-        <Text style={styles.price}>
-          from ${product.price}
-          {product.oldPrice && (
-            <Text style={styles.oldPrice}> ${product.oldPrice}</Text>
-          )}
-        </Text>
 
         {/* Documentation */}
         <Text style={styles.description}>{product.description}</Text>
@@ -49,11 +49,13 @@ const ProductScreen = () => {
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
         {/* Button */}
-        <Button
-          text="Add to cart"
-          onPress={() => console.warn('Add to cart')}
-        />
-        <Button text="Buy now" onPress={() => console.warn('Buy Now')} />
+        <View>
+          <Button
+            text="Add to Cart"
+            onPress={() => console.warn('Add to cart')}
+          />
+          <Button text="Buy Now" onPress={() => console.warn('Buy Now')} />
+        </View>
       </View>
     </ScrollView>
   );

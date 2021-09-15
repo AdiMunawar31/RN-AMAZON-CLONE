@@ -2,35 +2,44 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   root: {
-    padding: 10,
+    padding: 15,
     backgroundColor: '#fff'
   },
 
   title: {
-    fontSize: 18
+    fontSize: 18,
+    marginTop: 20,
+    marginBottom: 10,
+    marginHorizontal: 5
   },
 
   picker: {
-    backgroundColor: '#eaeaea',
-    marginVertical: 25,
+    backgroundColor: '#ffeedb',
+    marginTop: 20,
     borderRadius: 5
   },
     
   price: {
-    fontSize: 17,
+    fontSize: 25,
     fontWeight: 'bold',
+    color: '#ffa41c'
   },
 
   oldPrice: {
-    fontSize: 12,
+    fontSize: 13,
     textDecorationLine: 'line-through',
     fontStyle: 'normal',
-    color: '#990',
+    color: '#a1a1a1',
+    marginLeft: 5
   },
 
   description: {
-      marginVertical: 20,
-      lineHeight: 20
+      marginVertical: 30,
+      marginHorizontal: 7,
+      fontSize: 13,
+      lineHeight: 20,
+      width: '95%',
+      textAlign: 'left'
   },
 })
 

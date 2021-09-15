@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     root: {
     },
     image: {
-        height: 250,
+        height: 300,
         margin: 10,
         resizeMode: 'contain',
     },
