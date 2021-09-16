@@ -5,27 +5,31 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: 140,
+        width: 130,
         borderWidth: 1,
         borderColor: '#e3e3e3',
-        marginBottom: 10
+        marginBottom: 10,
+        borderRadius: 3
     },
 
     button: {
-        width: 38,
-        height: 35,
+        width: 40,
+        height: 31,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: '#f0f0f0',
+        backgroundColor: '#f7f7f7'
     },
 
     buttonText: {
-        fontSize: 20,
-        fontWeight: 'bold'
+        fontSize: 17,
+        fontWeight: 'bold',
     },
     
     quantity: {
         fontSize: 18,
-        fontWeight: 'bold',
+        color: '#4f90f7'
     }
 })
 

@@ -41,6 +41,12 @@ const styles = StyleSheet.create({
       width: '95%',
       textAlign: 'left'
   },
+
+  // button: {
+  //   flexDirection: 'row',
+  //   marginHorizontal: 3,
+  //   flex: 1
+  // }
 })
 
 export default styles;

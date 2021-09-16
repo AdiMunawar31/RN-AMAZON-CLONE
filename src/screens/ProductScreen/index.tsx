@@ -11,7 +11,7 @@ const ProductScreen = () => {
   const [selectedOption, setSelectedOption] = useState(
     product.options ? product.options[0] : null,
   );
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   console.log(selectedOption);
 
@@ -49,13 +49,17 @@ const ProductScreen = () => {
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
 
         {/* Button */}
-        <View>
-          <Button
-            text="Add to Cart"
-            onPress={() => console.warn('Add to cart')}
-          />
-          <Button text="Buy Now" onPress={() => console.warn('Buy Now')} />
-        </View>
+
+        <Button
+          text="Add to Cart"
+          onPress={() => console.warn('Add to cart')}
+          color={'#f2c624'}
+        />
+        <Button
+          text="Buy Now"
+          onPress={() => console.warn('Buy Now')}
+          color={'#ffa41c'}
+        />
       </View>
     </ScrollView>
   );
