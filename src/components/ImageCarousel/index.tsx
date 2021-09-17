@@ -4,9 +4,10 @@ import styles from './styles';
 
 interface ImageCarouselProps {
   images: string[];
+  id: string;
 }
 
-const ImageCarousel = ({images}: ImageCarouselProps) => {
+const ImageCarousel = ({images, id}: ImageCarouselProps) => {
   const [active, setActive] = useState(0);
   const windowWidth = useWindowDimensions().width;
 
@@ -21,6 +22,7 @@ const ImageCarousel = ({images}: ImageCarouselProps) => {
     <View style={styles.root}>
       <FlatList
         data={images}
+        key={id}
         renderItem={({item}) => (
           <Image
             style={[styles.image, {width: windowWidth - 50}]}

@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {FlatList, Text, View} from 'react-native';
 import Button from '../../components/Button';
@@ -10,6 +11,14 @@ const ShoppingCartScreen = () => {
     (sum, product) => sum + product.item.price * product.quantity,
     0,
   );
+
+  // const route = useRoute();
+  // console.log(route.params);
+
+  const navigation = useNavigation();
+  const onPress = () => {
+    navigation.navigate('Address');
+  };
 
   return (
     <View>
@@ -25,7 +34,7 @@ const ShoppingCartScreen = () => {
             </View>
             <Button
               text={`Proced to Checkout (${products.length} item)`}
-              onPress={() => console.warn('Add to cart')}
+              onPress={onPress}
               color={'#f2c624'}
             />
           </View>

@@ -7,11 +7,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#d1d1d1',
     borderRadius: 5,
-    marginVertical: 5,
+    marginVertical: 3,
+    padding: 1
   },
 
   img: {
     flex: 3,
+    marginLeft: 5,
     resizeMode: 'contain',
   },
 

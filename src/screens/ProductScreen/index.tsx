@@ -19,7 +19,7 @@ const ProductScreen = () => {
     <ScrollView>
       <View style={styles.root}>
         {/* Image Carousel */}
-        <ImageCarousel images={product.images} />
+        <ImageCarousel images={product.images} id={product.id} />
 
         <Text style={styles.title}>{product.title}</Text>
 
@@ -34,6 +34,7 @@ const ProductScreen = () => {
         {/* Option Selector */}
         <View style={styles.picker}>
           <Picker
+            key={product.id}
             selectedValue={selectedOption}
             onValueChange={itemValue => setSelectedOption(itemValue)}>
             {product.options.map((option, i) => (
