@@ -1,6 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import React, {useState} from 'react';
-import {SafeAreaView, View, TextInput} from 'react-native';
+import {SafeAreaView, View, TextInput, Text} from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 import ProductScreen from '../screens/ProductScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -13,21 +13,27 @@ interface HeaderProps {
 }
 const Header = ({searchValue, setSearchValue}: HeaderProps) => {
   return (
-    <SafeAreaView style={{backgroundColor: '#22e3dd'}}>
+    <SafeAreaView style={{backgroundColor: '#232f3e'}}>
       <View
         style={{
           margin: 10,
-          padding: 2,
+          padding: 1,
           backgroundColor: '#fff',
           flexDirection: 'row',
           alignItems: 'center',
         }}>
         <View style={{marginLeft: 10}}>
-          <Icon name="search" size={24} color="#000" />
+          <Icon name="search" size={24} color="#131921" />
         </View>
         <TextInput
           placeholder="Seach..."
-          style={{height: 40, marginLeft: 5, fontSize: 16, marginTop: 5}}
+          style={{
+            height: 35,
+            padding: 9,
+            marginLeft: 5,
+            fontSize: 16,
+            marginTop: 5,
+          }}
           value={searchValue}
           onChangeText={setSearchValue}
         />

@@ -90,31 +90,29 @@ export default class ProfileScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginVertical: 1,
-  },
+  container: {},
   header: {
-    backgroundColor: '#EE82EE',
+    backgroundColor: '#232f3e',
   },
   headerContent: {
     padding: 30,
     alignItems: 'center',
   },
   avatar: {
-    width: 130,
-    height: 130,
+    width: 100,
+    height: 100,
     borderRadius: 63,
     borderWidth: 4,
-    borderColor: '#FF6347',
+    borderColor: '#fd9a15',
     marginBottom: 10,
   },
   icon: {
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
   },
   title: {
-    fontSize: 18,
-    color: '#EE82EE',
+    fontSize: 16,
+    color: '#333333',
     marginLeft: 4,
   },
   btn: {
@@ -132,6 +130,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     shadowColor: 'black',
     shadowOpacity: 0.2,
+    alignItems: 'center',
     shadowOffset: {
       height: 1,
       width: -2,
@@ -145,6 +144,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   name: {
-    fontSize: 15,
+    fontSize: 18,
+    color: '#e8e8e8',
   },
 });
